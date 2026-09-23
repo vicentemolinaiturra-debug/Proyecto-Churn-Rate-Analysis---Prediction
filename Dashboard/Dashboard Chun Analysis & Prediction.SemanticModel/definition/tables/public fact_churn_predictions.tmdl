@@ -1,0 +1,51 @@
+table 'public fact_churn_predictions'
+	lineageTag: 3f4e6446-c873-42ca-aa9c-6c0aec73cc81
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 900babca-97d9-4c50-8f41-adca9b723304
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Churn_Risk_Probability
+		dataType: double
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: f9690e95-bebc-4e13-aa63-9dc072979d4f
+		summarizeBy: sum
+		sourceColumn: Churn_Risk_Probability
+
+		annotation SummarizationSetBy = Automatic
+
+	column Churn_Prediction_Flag
+		dataType: int64
+		formatString: 0
+		lineageTag: ae1dbf7b-b5bb-4830-ae05-1893546e501a
+		summarizeBy: sum
+		sourceColumn: Churn_Prediction_Flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Churn Risk Level' =
+			
+			SWITCH(
+			    TRUE(),
+			    'public fact_churn_predictions'[Churn_Risk_Probability] >= 0.70, "1. High Risk",
+			    'public fact_churn_predictions'[Churn_Risk_Probability] >= 0.40, "2. Medium Risk",
+			    "3. Low Risk"
+			)
+		lineageTag: 305688e6-fea6-4f40-86d0-26bd3024932e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public fact_churn_predictions' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("localhost", "churn_analytics", [CreateNavigationProperties=false]),
+				    public_fact_churn_predictions = Origen{[Schema="public",Item="fact_churn_predictions"]}[Data]
+				in
+				    public_fact_churn_predictions
+

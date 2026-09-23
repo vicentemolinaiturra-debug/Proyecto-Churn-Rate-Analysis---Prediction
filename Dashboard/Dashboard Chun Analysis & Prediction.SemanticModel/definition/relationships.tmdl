@@ -1,0 +1,28 @@
+relationship AutoDetected_2b662e13-5dce-4f49-8888-0134f8164c30
+	fromColumn: 'public churn_behavior'.age
+	toColumn: mapping_agegroup.age
+
+relationship AutoDetected_1d9dfe81-49b9-4eda-a154-53d10fd98ae1
+	fromColumn: 'public churn_behavior'.'Tenure in Months'
+	toColumn: mapping_tenuregroup.'Tenure in Months'
+
+relationship AutoDetected_bcecb570-59c4-4c33-a22a-367231230e3a
+	fromColumn: services.'Customer ID'
+	toColumn: 'public churn_behavior'.'Customer ID'
+
+relationship AutoDetected_de137ad8-ed8d-463d-9e54-2057045c542c
+	isActive: false
+	fromColumn: services.age
+	toColumn: mapping_agegroup.age
+
+relationship AutoDetected_47f8f4ed-4210-4d17-bd35-fa7f59cc3436
+	isActive: false
+	fromColumn: services.'Tenure in Months'
+	toColumn: mapping_tenuregroup.'Tenure in Months'
+
+relationship AutoDetected_82116bec-672f-4c56-a271-4c0cac892dfb
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'public fact_churn_predictions'.'Customer ID'
+	toColumn: 'public churn_behavior'.'Customer ID'
+

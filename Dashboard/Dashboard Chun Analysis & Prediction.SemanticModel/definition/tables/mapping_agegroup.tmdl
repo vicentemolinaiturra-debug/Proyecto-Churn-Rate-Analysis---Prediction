@@ -1,0 +1,42 @@
+table mapping_agegroup
+	lineageTag: f63f0b71-d9dd-4da6-ab31-c903f61f15b1
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 4023583f-bdbc-4f6d-aa2e-fad2522c85a5
+		summarizeBy: none
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Group'
+		dataType: string
+		lineageTag: bf65bde9-e185-484b-806a-8ffa7fdaa5e6
+		summarizeBy: none
+		sourceColumn: Age Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mapping_agegroup = m
+		mode: import
+		source =
+				let
+				    Origen = #"public churn_behavior",
+				    #"Otras columnas quitadas" = Table.SelectColumns(Origen,{"age"}),
+				    #"Duplicados quitados" = Table.Distinct(#"Otras columnas quitadas"),
+				    #"Personalizada agregada" = Table.AddColumn(#"Duplicados quitados", "Age Group", each if [age] < 20 then "<20"
+				else if [age] <= 30 then "20-30"
+				else if [age] <= 40 then "31-40"
+				else if [age] <= 50 then "41-50"
+				else if [age] <= 60 then "51-60"
+				else if [age] <= 70 then "61-70"
+				else if [age] <= 80 then "71-80"
+				else ">80")
+				in
+				    #"Personalizada agregada"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

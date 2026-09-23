@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 279.67123287671234,
+            "y": 0
+          },
+          "nodeIndex": "public churn_behavior",
+          "nodeLineageTag": "a763f197-265c-45bd-a68c-53d3c983f537",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 1049.4383561643835,
+            "y": 0
+          },
+          "nodeIndex": "Cb_Measures",
+          "nodeLineageTag": "6c53dae3-992f-4bb3-a5db-812589a94dcd",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 272.94520547945206,
+            "y": 321.20631081001733
+          },
+          "nodeIndex": "mapping_agegroup",
+          "nodeLineageTag": "f63f0b71-d9dd-4da6-ab31-c903f61f15b1",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 577.02739138145989,
+            "y": 0
+          },
+          "nodeIndex": "mapping_tenuregroup",
+          "nodeLineageTag": "47ccbe74-a701-4213-b73a-c7159b965188",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "services",
+          "nodeLineageTag": "10899b1b-fe4b-4a55-a14c-750c23f3fffc",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 583.431441132459,
+            "y": 268.73413313739479
+          },
+          "nodeIndex": "public fact_churn_predictions",
+          "nodeLineageTag": "3f4e6446-c873-42ca-aa9c-6c0aec73cc81",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 61.599432050614453,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

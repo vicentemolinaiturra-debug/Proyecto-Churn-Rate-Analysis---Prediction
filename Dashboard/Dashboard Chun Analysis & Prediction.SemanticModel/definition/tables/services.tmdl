@@ -1,0 +1,381 @@
+table services
+	lineageTag: 10899b1b-fe4b-4a55-a14c-750c23f3fffc
+
+	column 'Customer ID'
+		dataType: string
+		lineageTag: 7489c8f5-435c-40ad-b82b-837de36eed42
+		summarizeBy: none
+		sourceColumn: Customer ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: a45e28d4-5016-40cd-80c3-efbb8d1073ff
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 2df871ae-9758-49c1-826c-8690ea09158e
+		summarizeBy: sum
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Under 30'
+		dataType: string
+		lineageTag: ad174cee-443b-4fee-a9fa-d2fc5ef0eb43
+		summarizeBy: none
+		sourceColumn: Under 30
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Senior Citizen'
+		dataType: string
+		lineageTag: 11b0b46d-7851-4fcb-a334-b9058b1947d5
+		summarizeBy: none
+		sourceColumn: Senior Citizen
+
+		annotation SummarizationSetBy = Automatic
+
+	column married
+		dataType: string
+		lineageTag: de6e5246-9d5f-4624-90f4-ccefab7a321f
+		summarizeBy: none
+		sourceColumn: married
+
+		annotation SummarizationSetBy = Automatic
+
+	column dependents
+		dataType: string
+		lineageTag: cb35a929-fc1c-44ba-88e8-5c72f6bf1c0f
+		summarizeBy: none
+		sourceColumn: dependents
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Dependents'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cd7a8f8-c1c4-42cb-b944-24734f3b3553
+		summarizeBy: sum
+		sourceColumn: Number of Dependents
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 795dbdeb-efa6-4aea-b4e3-39bf1ed4259f
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 0e73447b-b529-4c53-810b-d319c9ccbfe3
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 0acce4fa-52d9-4056-ab14-ef243c06135e
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Zip Code'
+		dataType: int64
+		formatString: 0
+		lineageTag: ddfc906e-1564-41e9-b970-8f518a416a8b
+		summarizeBy: count
+		sourceColumn: Zip Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: ae7241a8-90f1-42bd-974d-240cd55bae8f
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 4447624f-a83a-4048-96b1-80dd5a5ab8a7
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column population
+		dataType: int64
+		formatString: 0
+		lineageTag: 7500427e-00ac-4b5b-98bc-ff43e98abbb2
+		summarizeBy: sum
+		sourceColumn: population
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarter
+		dataType: string
+		lineageTag: b2ff3ecd-d486-41e7-905f-b10a444d52d5
+		summarizeBy: none
+		sourceColumn: quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Referred a Friend'
+		dataType: string
+		lineageTag: 58765160-1484-4a3c-9ef1-63b17f082e36
+		summarizeBy: none
+		sourceColumn: Referred a Friend
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Referrals'
+		dataType: int64
+		formatString: 0
+		lineageTag: a617190d-790f-4f72-8ca1-289d37145ef7
+		summarizeBy: sum
+		sourceColumn: Number of Referrals
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenure in Months'
+		dataType: int64
+		formatString: 0
+		lineageTag: 541d779c-eca5-4e24-a2db-0bedd053ca4f
+		summarizeBy: sum
+		sourceColumn: Tenure in Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column offer
+		dataType: string
+		lineageTag: 51d295fe-1dfe-491b-8bbb-e89f0c4e2fe4
+		summarizeBy: none
+		sourceColumn: offer
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avg Monthly Long Distance Charges'
+		dataType: double
+		lineageTag: ac9731fb-99ad-4eef-be74-c29d92e61711
+		summarizeBy: sum
+		sourceColumn: Avg Monthly Long Distance Charges
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Multiple Lines'
+		dataType: string
+		lineageTag: df71ed1f-823f-4ab6-9156-f6f748f88081
+		summarizeBy: none
+		sourceColumn: Multiple Lines
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Internet Type'
+		dataType: string
+		lineageTag: 6030eff1-2a20-43ab-b0bf-7d27d846bcd4
+		summarizeBy: none
+		sourceColumn: Internet Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avg Monthly GB Download'
+		dataType: int64
+		formatString: 0
+		lineageTag: f36a00ca-ebd7-423f-ab7e-d61f6d07215b
+		summarizeBy: sum
+		sourceColumn: Avg Monthly GB Download
+
+		annotation SummarizationSetBy = Automatic
+
+	column contract
+		dataType: string
+		lineageTag: a0d57dbf-569f-42e7-a257-5a3c9b874a44
+		summarizeBy: none
+		sourceColumn: contract
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Method'
+		dataType: string
+		lineageTag: c5f36bd6-7944-4bf9-8ddd-722b1f47409b
+		summarizeBy: none
+		sourceColumn: Payment Method
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monthly Charge'
+		dataType: double
+		lineageTag: 06ddaf1d-3a7c-450c-9884-b573915ac606
+		summarizeBy: sum
+		sourceColumn: Monthly Charge
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Charges'
+		dataType: double
+		lineageTag: f49f5e95-ea56-4715-a347-808305b29af6
+		summarizeBy: sum
+		sourceColumn: Total Charges
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Refunds'
+		dataType: double
+		lineageTag: 3c060dd5-a845-4bf4-8a7f-b271be15ad8d
+		summarizeBy: sum
+		sourceColumn: Total Refunds
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Extra Data Charges'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b8a0948-6d31-4b5d-bd69-b3c288d2fdb0
+		summarizeBy: sum
+		sourceColumn: Total Extra Data Charges
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Long Distance Charges'
+		dataType: double
+		lineageTag: 40acb35f-18af-4fd6-84e8-692bad11da0f
+		summarizeBy: sum
+		sourceColumn: Total Long Distance Charges
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Revenue'
+		dataType: double
+		lineageTag: bf721b2c-7201-4cc0-93fd-d271a46c4b04
+		summarizeBy: sum
+		sourceColumn: Total Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Satisfaction Score'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4015e6a5-0c12-4b57-a857-b106196e1ce9
+		summarizeBy: sum
+		sourceColumn: Satisfaction Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Status'
+		dataType: string
+		lineageTag: 4d97f1f8-4623-432b-96a9-8a5f252e4038
+		summarizeBy: none
+		sourceColumn: Customer Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Churn Label'
+		dataType: string
+		lineageTag: 6f1da62b-905b-4d9e-9af8-d8c67dc2dc6d
+		summarizeBy: none
+		sourceColumn: Churn Label
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Churn Score'
+		dataType: int64
+		formatString: 0
+		lineageTag: c6dc8686-a16e-45db-88e4-f5c09d8e2c63
+		summarizeBy: sum
+		sourceColumn: Churn Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column cltv
+		dataType: int64
+		formatString: 0
+		lineageTag: 76358a9f-29eb-45fd-bdc8-f6ca0e0564b0
+		summarizeBy: sum
+		sourceColumn: cltv
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Churn Category'
+		dataType: string
+		lineageTag: 18145794-df0c-4f45-98ae-c2de26e06c24
+		summarizeBy: none
+		sourceColumn: Churn Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Churn Reason'
+		dataType: string
+		lineageTag: 94fc45b8-5734-4bfb-b0c7-bb6af3019208
+		summarizeBy: none
+		sourceColumn: Churn Reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column Churned
+		dataType: int64
+		formatString: 0
+		lineageTag: 0cc8df6f-4f70-48fc-b7c4-bb36709b6861
+		summarizeBy: sum
+		sourceColumn: Churned
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sevices
+		dataType: string
+		lineageTag: 5812e2ad-0de7-41dc-a870-648a8195ceac
+		summarizeBy: none
+		sourceColumn: Sevices
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service Status'
+		dataType: string
+		lineageTag: 7bb7cf1b-8840-4170-b17f-be38cafbebd6
+		summarizeBy: none
+		sourceColumn: Service Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition services = m
+		mode: import
+		source =
+				let
+				    Origen = #"public churn_behavior",
+				    #"Columna de anulación de dinamización" = Table.UnpivotOtherColumns(Origen, {"Customer ID", "gender", "age", "Under 30", "Senior Citizen", "married", "dependents", "Number of Dependents", "country", "state", "city", "Zip Code", "latitude", "longitude", "population", "quarter", "Referred a Friend", "Number of Referrals", "Tenure in Months", "offer", "Avg Monthly Long Distance Charges", "Multiple Lines", "Internet Type", "Avg Monthly GB Download", "contract", "Payment Method", "Monthly Charge", "Total Charges", "Total Refunds", "Total Extra Data Charges", "Total Long Distance Charges", "Total Revenue", "Satisfaction Score", "Customer Status", "Churn Label", "Churn Score", "cltv", "Churn Category", "Churn Reason", "Churned"}, "Atributo", "Valor"),
+				    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columna de anulación de dinamización",{{"Atributo", "Sevices"}, {"Valor", "Service Status"}})
+				in
+				    #"Columnas con nombre cambiado"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

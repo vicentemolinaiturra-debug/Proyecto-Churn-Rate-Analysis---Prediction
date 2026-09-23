@@ -1,0 +1,53 @@
+table Cb_Measures
+	lineageTag: 6c53dae3-992f-4bb3-a5db-812589a94dcd
+
+	measure 'New Joiners' = CALCULATE(COUNT('public churn_behavior'[Customer ID]),'public churn_behavior'[Customer Status] = "Joined")
+		formatString: 0
+		lineageTag: caba8835-cff6-45a6-8d91-8ad0cfd056db
+
+	measure 'Total Churn' = SUM('public churn_behavior'[Churned])
+		formatString: 0
+		lineageTag: 32185cce-1413-4d81-bd69-6feab3d1b904
+
+	measure 'Total Customers' = COUNT('public churn_behavior'[Customer ID])
+		formatString: 0
+		lineageTag: fd0df413-fae1-41d3-8134-22780ed01c1e
+
+	measure 'Churn Rate' = [Total Churn]/[Total Customers]
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 4b72802e-64ba-46f4-8e15-0706e2df59b7
+
+	measure 'Revenue Lost' = CALCULATE(SUM('public churn_behavior'[Total Revenue]), 'public churn_behavior'[Churn Label] = "Yes")
+		lineageTag: 283cc5d7-2095-4283-a85b-c1281f6effbb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'High Risk Clients' = CALCULATE(COUNT('public fact_churn_predictions'[Customer ID]),'public fact_churn_predictions'[Churn Risk Level] = "1. High Risk")
+		formatString: 0
+		lineageTag: 6ad58ae5-fc5f-4164-8214-79d9c5964c5b
+
+	measure 'Remaining risk' = 1 - AVERAGE('public fact_churn_predictions'[Churn_Risk_Probability])
+		lineageTag: c088e765-d598-4d79-b7f2-ed773bbe4bb1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Columna 1'
+		dataType: string
+		lineageTag: 31c03cf8-eb78-48d2-a8fd-ddafb672eafa
+		summarizeBy: none
+		sourceColumn: Columna 1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Cb_Measures = m
+		mode: import
+		source =
+				let
+				  Origen = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45Wiop3Kc3NrVSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Columna 1" = _t])
+				in
+				  Origen
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

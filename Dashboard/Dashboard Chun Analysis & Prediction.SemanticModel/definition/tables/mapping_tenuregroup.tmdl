@@ -1,0 +1,44 @@
+table mapping_tenuregroup
+	lineageTag: 47ccbe74-a701-4213-b73a-c7159b965188
+
+	column 'Tenure in Months'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f44de02-e061-452f-972c-704aded16b38
+		summarizeBy: none
+		sourceColumn: Tenure in Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Tenure in Months Group'
+		dataType: string
+		lineageTag: aa61f9c9-4ab2-4d6e-87f9-b9c8a14bc911
+		summarizeBy: none
+		sourceColumn: Tenure in Months Group
+
+		annotation SummarizationSetBy = Automatic
+
+	partition mapping_tenuregroup = m
+		mode: import
+		source =
+				let
+				    Origen = #"public churn_behavior",
+				    #"Otras columnas quitadas" = Table.SelectColumns(Origen,{"Tenure in Months"}),
+				    #"Duplicados quitados" = Table.Distinct(#"Otras columnas quitadas"),
+				    #"Personalizada agregada" = Table.AddColumn(#"Duplicados quitados", "Tenure in Months Group", each if [Tenure in Months] <= 10 then "0-10 months"
+				else if [Tenure in Months] <= 20 then "11-20 months"
+				else if [Tenure in Months] <= 30 then "21-30 months"
+				else if [Tenure in Months] <= 40 then "31-40 months"
+				else if [Tenure in Months] <= 50 then "41-50 months"
+				else if [Tenure in Months] <= 60 then "51-60 months"
+				else if [Tenure in Months] <= 70 then "61-70 months"
+				else if [Tenure in Months] <= 80 then "71-80 months"
+				
+				else "+80")
+				in
+				    #"Personalizada agregada"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+

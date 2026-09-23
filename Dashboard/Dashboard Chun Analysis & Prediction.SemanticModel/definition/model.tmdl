@@ -1,0 +1,24 @@
+model Model
+	culture: es-MX
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CL
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["public churn_behavior","Cb_Measures","mapping_agegroup","mapping_tenuregroup","services","public fact_churn_predictions"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'public churn_behavior'
+ref table Cb_Measures
+ref table mapping_agegroup
+ref table mapping_tenuregroup
+ref table services
+ref table 'public fact_churn_predictions'
+
+ref cultureInfo es-MX
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Dashboard Chun Analysis & Prediction"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d46c4067-cf9d-4304-9f67-12b831a6957a"
+  }
+}
