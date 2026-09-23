@@ -2,6 +2,9 @@
 
 Proyecto de análisis y predicción de abandono de clientes (*churn rate*) utilizando PostgreSQL, Python, Machine Learning y Power BI.
 
+>## 📊 **Análisis Ejecutivo y Caso de Negocio**  
+> Este repositorio documenta la arquitectura de datos y la guía de reproducción técnica. Para leer el análisis completo de resultados, la toma de decisiones basada en datos y ver el dashboard prescriptivo en acción, **[visita el caso de estudio en mi portafolio de Notion](https://app.notion.com/p/Telco-Churn-Prediction-End-to-End-Pipeline-4ed57cd27e8c83c3830c014690ce76e4?source=copy_link)**.
+
 ## 📁 Estructura del proyecto
 
 ```text
